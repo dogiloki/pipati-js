@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Piedra, papel o tijera</title>
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+
+	<div class="content-tablero">
+		<img class="casilla" id="casilla-jugador">VS
+		<img class="casilla" id="casilla-cpu">
+	</div>
+
+	<div class="aviso" id="aviso"></div>
+
+	<div class="content-optiones" id="content-optiones">
+		<img class="opcion" id="op1" onclick="tirada(this)">
+		<img class="opcion" id="op2" onclick="tirada(this)">
+		<img class="opcion" id="op3" onclick="tirada(this)">
+	</div>
+
+	<script type="text/javascript" src="js/App.js"></script>
+
+</body>
+</html>

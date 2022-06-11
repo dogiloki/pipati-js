@@ -1,0 +1,32 @@
+*{
+	padding: 0px;
+	margin: 0px;
+	font-family: arial;
+	box-sizing: border-box;
+}
+.content-tablero{
+	font-size: 50px;
+	display: flex;
+	align-items: center;
+}
+.content-tablero .casilla{
+	width: 200px;
+	height: 200px;
+	margin: 10px;
+}
+.aviso{
+	font-size: 20px;
+	margin: 10px;
+}
+.content-optiones .opcion{
+	width: 60px;
+	height: 60px;
+	margin: 10px;
+	border: 2px solid #c2c2c2;
+	transform: scale(1);
+	transition: 0.1s ease all;
+	cursor: pointer;
+}
+.content-optiones .opcion:hover{
+	transform: scale(1.1);
+}
