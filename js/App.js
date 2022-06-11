@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded",()=>{
 	btn3.setAttribute("src",this.imagenes[2]);
 });
 
-async function tirada(btn){
+function tirada(btn){
 	this.opciones(false);
 	this.casilla_jugador.setAttribute("src",btn.getAttribute("src"));
 	this.contador=0;
