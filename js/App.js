@@ -10,6 +10,7 @@ var aviso=document.getElementById('aviso');
 var btn1=document.getElementById('op1');
 var btn2=document.getElementById('op2');
 var btn3=document.getElementById('op3');
+var ganadas=0, perdidas=0, empatadas=0;
 
 document.addEventListener("DOMContentLoaded",()=>{
 	btn1.setAttribute("src",this.imagenes[0]);
@@ -26,6 +27,16 @@ function tirada(btn){
 	setTimeout(()=>{
 		clearInterval(intervalo);
 		this.opciones(true);
+		let mensaje=esGanador();
+		switch(mensaje){
+			case -1: mensaje="Empataste"; this.empatadas++; break;
+			case 0: mensaje="Perdiste"; this.perdidas++; break;
+			case 1: mensaje="Ganaste"; this.ganadas++; break;
+		}
+		this.aviso.innerHTML=mensaje;
+		document.getElementById("ganadas").innerHTML=`Ganadas: ${this.ganadas}`;
+		document.getElementById("perdidas").innerHTML=`Perdidas: ${this.perdidas}`;
+		document.getElementById("empatadas").innerHTML=`Empatadas: ${this.empatadas}`;
 	},1500);
 }
 
@@ -43,15 +54,15 @@ function *tiroCpu(){
 }
 
 function opciones(mostrar){
-	this.aviso.innerHTML=mostrar?esGanador():"";
+	this.aviso.innerHTML="";
 	content_optiones.style.display=(mostrar?"":"none");
 }
 
 function esGanador(){
 	let tiro1=this.casilla_jugador.getAttribute("src");
 	let tiro2=this.casilla_cpu.getAttribute("src");
-	return (tiro1==tiro2)?"Empate":
-			(tiro1==this.imagenes[0] && tiro2==this.imagenes[2])?"Ganaste":
-			(tiro1==this.imagenes[1] && tiro2==this.imagenes[0])?"Ganaste":
-			(tiro1==this.imagenes[2] && tiro2==this.imagenes[1])?"Ganaste":"Perdiste";
+	return (tiro1==tiro2)?-1:
+			(tiro1==this.imagenes[0] && tiro2==this.imagenes[2])?1:
+			(tiro1==this.imagenes[1] && tiro2==this.imagenes[0])?1:
+			(tiro1==this.imagenes[2] && tiro2==this.imagenes[1])?1:0;
 }
