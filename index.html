@@ -8,14 +8,11 @@
 </head>
 <body>
 
+	<h1>PIEDRA, PAPEL O TIJERA</h1>
+
 	<div class="content-tablero">
 		<img class="casilla" id="casilla-jugador" src="img/pipati.svg">VS
 		<img class="casilla" id="casilla-cpu" src="img/pipati.svg">
-		<div class="contadores">
-			<li id="ganadas">Ganadas: 0</li>
-			<li id="perdidas">Perdidas: 0</li>
-			<li id="empatadas">Empatadas: 0</li>
-		</div>
 	</div>
 
 	<div class="aviso" id="aviso"></div>
@@ -24,6 +21,12 @@
 		<img class="opcion" id="op1" onclick="tirada(this)">
 		<img class="opcion" id="op2" onclick="tirada(this)">
 		<img class="opcion" id="op3" onclick="tirada(this)">
+	</div>
+
+	<div class="contadores">
+		<li id="ganadas">Ganadas: 0</li>
+		<li id="perdidas">Perdidas: 0</li>
+		<li id="empatadas">Empatadas: 0</li>
 	</div>
 
 	<script type="text/javascript" src="js/App.js"></script>
