@@ -1,7 +1,7 @@
 var imagenes=[
-	"img/Piedra.png",
-	"img/Papel.png",
-	"img/Tijera.png"
+	"img/piedra.svg",
+	"img/papel.svg",
+	"img/tijera.svg"
 ];
 var casilla_jugador=document.getElementById('casilla-jugador');
 var casilla_cpu=document.getElementById('casilla-cpu');
@@ -15,8 +15,11 @@ var ganadas=0, perdidas=0, empatadas=0;
 // Se ejecura al cargar en DOM
 document.addEventListener("DOMContentLoaded",()=>{
 	btn1.setAttribute("src",this.imagenes[0]);
+	btn1.setAttribute("title","Piedra");
 	btn2.setAttribute("src",this.imagenes[1]);
+	btn2.setAttribute("title","Papel");
 	btn3.setAttribute("src",this.imagenes[2]);
+	btn3.setAttribute("title","Tijera");
 });
 
 function tirada(btn){
